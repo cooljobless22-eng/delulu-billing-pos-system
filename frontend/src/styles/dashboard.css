@@ -1,0 +1,56 @@
+.dashboard-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  background: #334155;
+}
+
+.stat-card h3 {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.stat-card h1 {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.loader {
+  padding: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.error {
+  padding: 50px;
+  text-align: center;
+  color: red;
+}

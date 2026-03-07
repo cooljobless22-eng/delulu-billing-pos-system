@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================
+   ✨ GLASS SHINE
+========================= */
+@keyframes shineMove {
+  0% {
+    transform: rotate(25deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(25deg) translateX(100%);
+  }
+}
+
+.shine-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shineMove 4s infinite linear;
+  pointer-events: none;
+}
+
+
+/* =========================
+   ⌨ BLINK CURSOR
+========================= */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite;
+}
+
+
+/* =========================
+   🚀 SUPER SMOOTH PAGE ENTRY
+========================= */
+@keyframes smoothEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.smooth-entry {
+  animation: smoothEntry 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* =========================
+   🚀 DASHBOARD ENTRY ANIMATION
+========================= */
+@keyframes dashboardEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.dashboard-entry {
+  animation: dashboardEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* =========================
+   ✨ STAGGER ITEM ANIMATION
+========================= */
+@keyframes itemFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item {
+  opacity: 0;
+  animation: itemFadeUp 0.6s ease forwards;
+}
+
+/* Delay helpers */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+
+/* =========================
+   🔥 PREMIUM BRAND TITLE (DELULU)
+========================= */
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+.brand-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #ff00ff,
+    #00f5ff
+  );
+  background-size: 300%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 6s linear infinite;
+}
+
+/* Soft neon glow */
+.brand-title::after {
+  content: "DELULU MALL";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  color: rgba(0, 255, 255, 0.3);
+  filter: blur(25px);
+}
