@@ -14,7 +14,11 @@ const { Server } = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 
 const SECRET_KEY = "delulu_secret_key";
@@ -43,10 +47,11 @@ app.set("io", io);
 // DATABASE CONNECTION
 // ===============================
 const db = mysql.createConnection({
-    host: "localhost",
+    host: "mysql.railway.internal",
     user: "root",
-    password: "Deeban@2026",
-    database: "delulu_billing"
+    password: "pnXbcQjnSERozzdMAamzhDhFRnWbrenv",
+    database: "railway",
+    port: 3306
 });
 
 db.connect((err) => {
