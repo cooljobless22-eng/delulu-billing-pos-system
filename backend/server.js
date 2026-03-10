@@ -28,7 +28,7 @@ const SECRET_KEY = "delulu_secret_key";
 // ===============================
 const io = new Server(server, {
     cors: {
-        origin: "https://delulu-billing-pos-system-pro.vercel.app/",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
@@ -47,11 +47,11 @@ app.set("io", io);
 // DATABASE CONNECTION
 // ===============================
 const db = mysql.createConnection({
-    host: "mysql.railway.internal",
-    user: "root",
-    password: "pnXbcQjnSERozzdMAamzhDhFRnWbrenv",
-    database: "railway",
-    port: 3306
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT
 });
 
 db.connect((err) => {
