@@ -28,7 +28,7 @@ const SECRET_KEY = "delulu_secret_key";
 // ===============================
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://delulu-billing-pos-system-pro.vercel.app/",
         methods: ["GET", "POST"]
     }
 });
