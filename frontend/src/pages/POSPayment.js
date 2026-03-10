@@ -175,7 +175,7 @@ Object.keys(gstSummary).forEach(rate => {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "https://delulu-pos-system-1.onrender.com/create-invoice",
+        "https://delulu-billing-pos-system.onrender.com/create-invoice",
         {
           customer_name: "Walk-in",
           discount: 0,

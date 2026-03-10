@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const socket = io("http://localhost:5000");
+const socket = io("https://delulu-billing-pos-system.onrender.com");
 
 
 function Dashboard() {
@@ -76,7 +76,7 @@ function Dashboard() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:5000/admin/dashboard",
+        "https://delulu-billing-pos-system.onrender.com/admin/dashboard",
         {
           headers: { Authorization: `Bearer ${token}` }
         }

@@ -14,7 +14,7 @@ function Invoice() {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          `http://localhost:5000/invoice/${invoiceNumber}`,
+          `https://delulu-billing-pos-system.onrender.com/invoice/${invoiceNumber}`,
           {
             headers: { Authorization: `Bearer ${token}` }
           }

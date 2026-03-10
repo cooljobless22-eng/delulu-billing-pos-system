@@ -40,7 +40,7 @@ function Login() {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://localhost:5000/login", {
+      const res = await axios.post("https://delulu-billing-pos-system.onrender.com/login", {
         username,
         password
       });

@@ -27,7 +27,7 @@ function POS() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `https://delulu-pos-system-1.onrender.com/api/products/${barcode.trim()}`,
+        `https://delulu-billing-pos-system.onrender.com/api/products/${barcode.trim()}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -103,7 +103,7 @@ function POS() {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `https://delulu-pos-system-1.onrender.com/api/products/search/${encodeURIComponent(value)}`,
+          `https://delulu-billing-pos-system.onrender.com/api/products/search/${encodeURIComponent(value)}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setSuggestions(response.data || []);
@@ -193,7 +193,7 @@ function POS() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://delulu-pos-system-1.onrender.com/create-invoice",
+        "https://delulu-billing-pos-system.onrender.com/create-invoice",
         {
           customer_name: "Walk-in",
           discount: 0,
