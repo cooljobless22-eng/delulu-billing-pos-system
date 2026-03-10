@@ -16,7 +16,7 @@ const app = express();
 const server = http.createServer(app);
 app.use(
   cors({
-    origin: "https://delulu-billing-pos-system-jihi.vercel.app",
+    origin: "*",
   })
 );
 app.use(express.json());
